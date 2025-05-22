@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Number Game</h1>
+    <p>Click the button to generate a random number between 0 and 9.</p>
+    <p><input type="text" id="guess"></p>
+    <p><button id="guessButton">Guess</button></p>
+
+
+    <script type="text/javascript">
+
+        document.getElementById("guessButton").onclick = function() {
+           var randomNumber = Math.random();
+           randomNumber = randomNumber*10;
+           randomNumber = Math.floor(randomNumber);
+           if (document.getElementById("guess").value == randomNumber) {
+               alert("You guessed it right!");
+           } else {
+               alert("Wrong guess! The number was " + randomNumber);
+           }
+        };
+
+
+    </script>
+</body>
+</html>
